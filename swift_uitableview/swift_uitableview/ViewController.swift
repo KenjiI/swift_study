@@ -8,21 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSXMLParserDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MWFeedParserDelegate {
     
     @IBOutlet var tableView: UITableView!
-    var items:Array<String> = ["one", "two", "three", "four"]
+    //var items:Array<String> = ["one", "two", "three", "four"]
     // NSXMLParserDelegate
     var parseKey : String!
     var nameArray: Array<String>!
-    
+    var items: NSMutableArray! = nil
+    /*
     let entryKey = "entry"
     let titleKey = "title"
     let urlKey   = "url"
-
+    */
+    /*
     required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
-    }
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,15 +56,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         //return items.count
-        return nameArray.count
+        return self.items.count
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell: UITableViewCell =  tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell!
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        let item = self.items[indexPath.row] as MWFeedItem
         //cell.textLabel.text = "\(self.items[indexPath.row])"
-        cell.textLabel.text = nameArray[indexPath.row]
-        cell.detailTextLabel.text = "Subtitle index : \(indexPath.row)"
+        //cell.textLabel.text = nameArray[indexPath.row]
+        cell.textLabel.text = item.title
+        //cell.detailTextLabel.text = "Subtitle index : \(indexPath.row)"
+        cell.detailTextLabel.text = item.link
         return cell
     }
     
@@ -148,6 +153,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // リクエスト
      func execRequest(){
+        /*
         //let url  = NSURL.URLWithString("http://qiita.com/")
         let url  = NSURL.URLWithString("http://rss.dailynews.yahoo.co.jp/fc/entertainment/rss.xml")
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -158,10 +164,40 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             parser.delegate = self;
             parser.parse()
         })
-        
+    
         task.resume()
+        */
+        let feedURL = NSURL.URLWithString("http://rss.dailynews.yahoo.co.jp/fc/entertainment/rss.xml");
+        let feedParser = MWFeedParser(feedURL: feedURL)
+        feedParser.delegate = self
+        feedParser.parse()
     }
     
+    // parser 開始
+    func feedParserDidStart(parser: MWFeedParser) {
+//        SVProgressHUD.show()
+        self.items = NSMutableArray()
+    }
+    
+    // parser 完了時
+    func feedParserDidFinish(parser: MWFeedParser) {
+//        SVProgressHUD.dismiss()
+        self.tableView.reloadData()
+    }
+    
+    // Feed Info の parse 完了
+    func feedParser(parser: MWFeedParser, didParseFeedInfo info: MWFeedInfo) {
+        println(info)
+        self.title = info.title
+    }
+    
+    // Feed Item の parse 完了（１件）
+    func feedParser(parser: MWFeedParser, didParseFeedItem item: MWFeedItem) {
+        println(item)
+        self.items.addObject(item)
+    }
+
+    /* 自力でparserを頑張ろうとした後・・・ 一応titleはTableViewにセットされるところまで
     func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: NSDictionary!)
     {
         println("didStartElement")
@@ -200,6 +236,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.tableView.reloadData()
         });
     }
+*/
 }
 
 class Hoge {
