@@ -8,21 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MWFeedParserDelegate {
+class ViewController: UITableViewController, MWFeedParserDelegate {
     
     // 記事のitem配列
     var items: NSMutableArray! = nil
-    // TableView
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // delegate の設定
-        self.tableView.delegate = self
-        self.tableView.dataSource = self;
-
         // 記事の取得とパース
         let feedURL = NSURL.URLWithString("http://rss.dailynews.yahoo.co.jp/fc/computer/rss.xml");
         let feedParser = MWFeedParser(feedURL: feedURL)
@@ -37,11 +31,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 /* UITableViewDataSource delegate*/
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell: UITableViewCell =  tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell!
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         let item = self.items[indexPath.row] as MWFeedItem
@@ -50,12 +44,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        /*
         let alert = UIAlertView(title: "alertTitle", message: "selected cell index is \(indexPath.row)", delegate: nil, cancelButtonTitle: "OK")
         alert.show()
-        
+        */
+        //self.performSegueWithIdentifier("showDetail", sender: self)
     }
 
+/* StoryBoard による画面遷移時の呼ばれる コードで全部作るなら上の select をトリガに処理をする */
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if(segue.identifier == "showDetail"){
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let item = self.items[indexPath.row] as MWFeedItem
+            let destController = segue.destinationViewController as DetailShowController
+            destController.item = item
+        }
+    }
 /* MWFeedParserDelegate delegate*/
 
     // parser 開始

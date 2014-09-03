@@ -10,9 +10,10 @@
 		0B512B5394884EDB88511357 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB3E57353F04BD4BE24617F /* libPods.a */; };
 		A70F0C2419AC34BC00780B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F0C2319AC34BC00780B7F /* AppDelegate.swift */; };
 		A70F0C2619AC34BC00780B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F0C2519AC34BC00780B7F /* ViewController.swift */; };
-		A70F0C2919AC34BC00780B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70F0C2719AC34BC00780B7F /* Main.storyboard */; };
 		A70F0C2B19AC34BC00780B7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70F0C2A19AC34BC00780B7F /* Images.xcassets */; };
 		A70F0C3719AC34BC00780B7F /* RssReader_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F0C3619AC34BC00780B7F /* RssReader_1Tests.swift */; };
+		A7D2894519B6C61100E76192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2894419B6C61100E76192 /* Main.storyboard */; };
+		A7D2894719B759FD00E76192 /* DetailShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2894619B759FD00E76192 /* DetailShowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +31,13 @@
 		A70F0C2219AC34BC00780B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A70F0C2319AC34BC00780B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A70F0C2519AC34BC00780B7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A70F0C2819AC34BC00780B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A70F0C2A19AC34BC00780B7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A70F0C3019AC34BC00780B7F /* RssReader_1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RssReader_1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70F0C3519AC34BC00780B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A70F0C3619AC34BC00780B7F /* RssReader_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssReader_1Tests.swift; sourceTree = "<group>"; };
 		A73E518019AC381B00B7AE12 /* RssReader_1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RssReader_1-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7D2894419B6C61100E76192 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A7D2894619B759FD00E76192 /* DetailShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailShowController.swift; sourceTree = "<group>"; };
 		DBB3E57353F04BD4BE24617F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECB5F0E769A4F77B0536B2D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +94,8 @@
 			children = (
 				A70F0C2319AC34BC00780B7F /* AppDelegate.swift */,
 				A70F0C2519AC34BC00780B7F /* ViewController.swift */,
-				A70F0C2719AC34BC00780B7F /* Main.storyboard */,
+				A7D2894619B759FD00E76192 /* DetailShowController.swift */,
+				A7D2894419B6C61100E76192 /* Main.storyboard */,
 				A70F0C2A19AC34BC00780B7F /* Images.xcassets */,
 				A70F0C2119AC34BC00780B7F /* Supporting Files */,
 				A73E518019AC381B00B7AE12 /* RssReader_1-Bridging-Header.h */,
@@ -207,8 +210,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A70F0C2919AC34BC00780B7F /* Main.storyboard in Resources */,
 				A70F0C2B19AC34BC00780B7F /* Images.xcassets in Resources */,
+				A7D2894519B6C61100E76192 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70F0C2619AC34BC00780B7F /* ViewController.swift in Sources */,
+				A7D2894719B759FD00E76192 /* DetailShowController.swift in Sources */,
 				A70F0C2419AC34BC00780B7F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,17 +285,6 @@
 			targetProxy = A70F0C3119AC34BC00780B7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A70F0C2719AC34BC00780B7F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A70F0C2819AC34BC00780B7F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A70F0C3819AC34BC00780B7F /* Debug */ = {
