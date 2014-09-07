@@ -11,7 +11,7 @@ import Foundation
 
 class DetailShowController: UIViewController, UIWebViewDelegate {
     var webview: UIWebView = UIWebView()
-    var item:MWFeedItem!;
+    var item:Feed!;
     
     override func viewDidLoad() {
         super.viewDidLoad()

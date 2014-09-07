@@ -14,6 +14,8 @@
 		A70F0C3719AC34BC00780B7F /* RssReader_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F0C3619AC34BC00780B7F /* RssReader_1Tests.swift */; };
 		A7D2894519B6C61100E76192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D2894419B6C61100E76192 /* Main.storyboard */; };
 		A7D2894719B759FD00E76192 /* DetailShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2894619B759FD00E76192 /* DetailShowController.swift */; };
+		A7D2894A19B75DA300E76192 /* RssReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D2894819B75DA300E76192 /* RssReader.xcdatamodeld */; };
+		A7D2894F19B75E9300E76192 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2894E19B75E9300E76192 /* Feed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 		A73E518019AC381B00B7AE12 /* RssReader_1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RssReader_1-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7D2894419B6C61100E76192 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A7D2894619B759FD00E76192 /* DetailShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailShowController.swift; sourceTree = "<group>"; };
+		A7D2894919B75DA300E76192 /* RssReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RssReader.xcdatamodel; sourceTree = "<group>"; };
+		A7D2894E19B75E9300E76192 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		A7D2895019B7623300E76192 /* RssReader 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RssReader 1.xcdatamodel"; sourceTree = "<group>"; };
 		DBB3E57353F04BD4BE24617F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECB5F0E769A4F77B0536B2D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				A70F0C2319AC34BC00780B7F /* AppDelegate.swift */,
+				A7D2894819B75DA300E76192 /* RssReader.xcdatamodeld */,
+				A7D2894E19B75E9300E76192 /* Feed.swift */,
 				A70F0C2519AC34BC00780B7F /* ViewController.swift */,
 				A7D2894619B759FD00E76192 /* DetailShowController.swift */,
 				A7D2894419B6C61100E76192 /* Main.storyboard */,
@@ -262,7 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D2894F19B75E9300E76192 /* Feed.swift in Sources */,
 				A70F0C2619AC34BC00780B7F /* ViewController.swift in Sources */,
+				A7D2894A19B75DA300E76192 /* RssReader.xcdatamodeld in Sources */,
 				A7D2894719B759FD00E76192 /* DetailShowController.swift in Sources */,
 				A70F0C2419AC34BC00780B7F /* AppDelegate.swift in Sources */,
 			);
@@ -458,6 +467,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A7D2894819B75DA300E76192 /* RssReader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A7D2895019B7623300E76192 /* RssReader 1.xcdatamodel */,
+				A7D2894919B75DA300E76192 /* RssReader.xcdatamodel */,
+			);
+			currentVersion = A7D2894919B75DA300E76192 /* RssReader.xcdatamodel */;
+			path = RssReader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A70F0C1619AC34BC00780B7F /* Project object */;
 }

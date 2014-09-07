@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "RssReader_1.ViewController.prepareForSegue (RssReader_1.ViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIStoryboardSegue&gt;, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RssReader_1.ViewController.feedParser (RssReader_1.ViewController)(ObjectiveC.MWFeedParser, didParseFeedItem : ObjectiveC.MWFeedItem) -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.getFeedLastDate!.compare(item.date)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RssReader_1.ViewController.viewDidLoad (RssReader_1.ViewController)() -&gt; ():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RssReader_1.DetailShowController.viewDidLoad (RssReader_1.DetailShowController)() -&gt; ():DetailShowController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RssReader_1.ViewController.tableView (RssReader_1.ViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, cellForRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableViewCell&gt;:ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RssReader_1.ViewController.tableView (RssReader_1.ViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, numberOfRowsInSection : Swift.Int) -&gt; Swift.Int:ViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
