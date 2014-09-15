@@ -5,7 +5,7 @@
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Title-->
         <scene sceneID="dqK-Yl-CM0">
             <objects>
                 <tableViewController id="A30-q9-lTX" customClass="ViewController" customModule="RssReader_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                             <outlet property="delegate" destination="A30-q9-lTX" id="MkL-g9-eaK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="m3g-Ze-Kq3"/>
+                    <navigationItem key="navigationItem" title="Title" id="H2y-rw-XaQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihL-HD-jjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

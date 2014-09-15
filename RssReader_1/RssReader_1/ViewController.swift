@@ -12,8 +12,8 @@ import CoreData
 class ViewController: UITableViewController, MWFeedParserDelegate {
     
     // 記事のitem配列
-    var itemInfo: MWFeedInfo! = nil
-    var items: NSMutableArray! = nil
+    var itemInfo: MWFeedInfo!
+    var items: NSMutableArray!
     var getFeedLastDate: NSDate?
     var managedObjectContext: NSManagedObjectContext?
     
@@ -86,6 +86,15 @@ class ViewController: UITableViewController, MWFeedParserDelegate {
         let item = self.items[indexPath.row] as Feed
         cell.textLabel.text = item.title
         cell.detailTextLabel.text = item.receiveDate.description
+        
+        let projectURL = item.link.componentsSeparatedByString("?")[0]
+        let imgURL: NSURL = NSURL(string: "http://i.yimg.jp/images/icon/photo.gif")
+        cell.imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        let data = NSData.dataWithContentsOfURL(imgURL, options: nil, error: nil)
+        let image = UIImage(data: data)
+        cell.imageView.image = image
+        //cell.imageView.setImageWithURL(imgURL, placeholderImage: UIImage(named: "logo.png"))
         return cell
     }
     
