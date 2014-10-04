@@ -7,22 +7,32 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class ViewController: UIViewController {
     
+    var moviePlayer:MPMoviePlayerController!
     @IBOutlet weak var webview: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //self.webview.frame = self.view.bounds;
-        //self.webview.delegate = self;
-        //self.view.addSubview(self.webview)
-        
-        var url = NSURL.URLWithString("http://www.youtube.com/embed/OW0S0zOJeR8?feature=player_detailpage&playsinline=1")
+        /*
+        var url = NSURL.URLWithString("https://www.youtube.com/embed/We3uAyJJ9Fo?feature=player_detailpage&playsinline=1")
         var urlRequest: NSURLRequest = NSURLRequest(URL: url)
         self.webview.allowsInlineMediaPlayback = true;
         self.webview.loadRequest(urlRequest)
+        */
+        
+        var srcUrl = NSURL.URLWithString("https://www.youtube.com/embed/We3uAyJJ9Fo?feature=player_detailpage&playsinline=1")
+        
+        var dict = HCYoutubeParser.h264videosWithYoutubeURL(srcUrl)
+        var url = NSURL.URLWithString(dict["medium"] as NSString)
+        moviePlayer = MPMoviePlayerController(contentURL: url)
+        moviePlayer.view.frame = CGRect(x: 20, y: 100, width: 200, height: 150)
+        self.view.addSubview(moviePlayer.view)
+        moviePlayer.fullscreen = true
     }
 
     override func didReceiveMemoryWarning() {
